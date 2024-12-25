@@ -52,7 +52,7 @@ export default function Page() {
               href="https://www.example.com"
               className="text-base text-gray-400"
             >
-              Don't have an account?
+              Don&apos;t have an account?
               <span className="text-blue-600">Sign Up</span>
             </Link>
           </div>
