@@ -5,7 +5,6 @@ export default function Layout({
 }>) {
   return (
     <div>
-      Sign In Layout
       <div className="p-4">{children}</div>
     </div>
   );
