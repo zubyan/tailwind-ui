@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         gilroy: ['var(--font-gilroy)'],
+        gilmer: ['var(--font-gilmer)'],
       },
       colors: {
         background: 'hsl(var(--background))',

@@ -7,15 +7,15 @@ import line from '../images/line.svg';
 
 export default function Page() {
   return (
-    <div>
-      <div className="pt-10 pl-4">
-        <div className="pl-32 pb-10">
+    <div className="w-[412px]">
+      <div className="ml-4 mr-4 mt-10">
+        <div className="mb-10 flex justify-center">
           <Image alt="logo" src={logo} width={118.98} height={132.07} />
         </div>
         <div className="space-y-5">
           <div>
-            <div className="text-2xl font-normal">Sign In</div>
-            <div className="text-base font-normal text-gray-400 mt-4">
+            <div className="text-2xl">Sign In</div>
+            <div className="text-gray-400 mt-4">
               Get started to play and win
             </div>
           </div>
@@ -30,32 +30,29 @@ export default function Page() {
           <div>
             <Link
               href="https://www.example.com"
-              className="text-base text-gray-400 pl-56"
+              className="text-gray-400 pl-56"
             >
               Forgot Password?
             </Link>
           </div>
         </div>
-        <div className="mt-36 space-y-4">
-          <div>
-            <Button variant="default" className="w-96 h-14">
-              Sign In
-            </Button>
-          </div>
-          <div>
-            <Button variant="outline" className="w-96 h-14">
-              Sign In with <Image alt="line" src={line} width={24} />
-            </Button>
-          </div>
-          <div className="pl-16">
-            <Link
-              href="https://www.example.com"
-              className="text-base text-gray-400"
-            >
-              Don&apos;t have an account?
-              <span className="text-blue-600">Sign Up</span>
-            </Link>
-          </div>
+      </div>
+      <div className="ml-4 mr-4 mb-4 mt-36 space-y-4">
+        <div>
+          <Button variant="default" className="w-[380px] h-14 text-white">
+            Sign In
+          </Button>
+        </div>
+        <div>
+          <Button variant="outline" className="w-[380px] h-14">
+            Sign In with <Image alt="line" src={line} width={24} />
+          </Button>
+        </div>
+        <div className="text-center">
+          <Link href="/sign-up" className="text-base text-gray-400">
+            Don&apos;t have an account?
+            <span className="text-blue-600"> Sign Up</span>
+          </Link>
         </div>
       </div>
     </div>
