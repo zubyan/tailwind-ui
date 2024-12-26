@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import line from '../images/line.svg';
+import { Label } from '@/components/ui/label';
 
 export default function Page() {
   return (
@@ -19,13 +20,13 @@ export default function Page() {
               Get started to play and win
             </div>
           </div>
-          <div>
-            <div className="text-sm">Email</div>
-            <Input placeholder="Input Here" type="email" />
+          <div className="grid gap-1.5">
+            <Label htmlFor="email">Email</Label>
+            <Input placeholder="Input Here" type="email" id="email" />
           </div>
-          <div>
-            <div className="text-sm">Password</div>
-            <Input placeholder="Input Here" type="password" />
+          <div className="grid gap-1.5">
+            <Label htmlFor="password">Password</Label>
+            <Input placeholder="Input Here" type="password" id="password" />
           </div>
           <div>
             <Link

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
 
 export default function Page() {
   return (
@@ -12,29 +13,29 @@ export default function Page() {
         </div>
       </div>
       <div className="space-y-4 ml-4 mr-4 mt-6 mb-6">
-        <div>
-          <div className="text-sm">Name</div>
-          <Input placeholder="Input Here" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="name">Name</Label>
+          <Input placeholder="Input Here" id="name" />
         </div>
-        <div>
-          <div className="text-sm">Email</div>
-          <Input placeholder="Input Here" type="email" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="email">Email</Label>
+          <Input placeholder="Input Here" type="email" id="email" />
         </div>
-        <div>
-          <div className="text-sm">Mobile Number</div>
-          <Input placeholder="Input Here" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="mobile">Mobile Number</Label>
+          <Input placeholder="Input Here" id="mobile" />
         </div>
-        <div>
-          <div className="text-sm">Referral Code (Optional)</div>
-          <Input placeholder="Input Here" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="referral">Referral Code (Optional)</Label>
+          <Input placeholder="Input Here" id="referral" />
         </div>
-        <div>
-          <div className="text-sm">Password</div>
-          <Input placeholder="Input Here" type="password" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="password">Password</Label>
+          <Input placeholder="Input Here" type="password" id="password" />
         </div>
-        <div>
-          <div className="text-sm">Confirm Password</div>
-          <Input placeholder="Input Here" type="password" />
+        <div className="grid gap-1.5">
+          <Label htmlFor="cpassword">Confirm Password</Label>
+          <Input placeholder="Input Here" type="password" id="cpassword" />
         </div>
       </div>
       <div className="ml-4 mr-4 mb-4 space-y-4">
