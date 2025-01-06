@@ -29,6 +29,9 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      backgroundImage: {
+        card: 'linear-gradient(180deg, rgba(31, 31, 31, 0) 12.08%, #1F1F1F 110.94%)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

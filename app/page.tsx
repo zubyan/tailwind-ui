@@ -11,7 +11,13 @@ export default function Home() {
         <Link href="/sign-up">Sign Up</Link>
       </div>
       <div>
-        <Link href="profile">Profile</Link>
+        <Link href="/profile">Profile</Link>
+      </div>
+      <div>
+        <Link href="/home">Home</Link>
+      </div>
+      <div>
+        <Link href="/game-list">Game List</Link>
       </div>
     </div>
   );
