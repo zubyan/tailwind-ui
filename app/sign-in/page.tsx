@@ -1,10 +1,9 @@
-import { Input } from '@/components/ui/input';
 import logo from '../images/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import line from '../images/line.svg';
-import { Label } from '@/components/ui/label';
+import { LabelInput } from '@/components/labelInput';
 
 export default function Page() {
   return (
@@ -21,14 +20,18 @@ export default function Page() {
                 Get started to play and win
               </div>
             </div>
-            <div className="grid gap-1.5">
-              <Label htmlFor="email">Email</Label>
-              <Input placeholder="Input Here" type="email" id="email" />
-            </div>
-            <div className="grid gap-1.5">
-              <Label htmlFor="password">Password</Label>
-              <Input placeholder="Input Here" type="password" id="password" />
-            </div>
+            <LabelInput
+              label="Email"
+              htmlFor="email"
+              inputId="email"
+              type="email"
+            />
+            <LabelInput
+              label="Password"
+              htmlFor="password"
+              inputId="password"
+              type="password"
+            />
             <div>
               <Link
                 href="https://www.example.com"

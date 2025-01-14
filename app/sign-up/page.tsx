@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
+import { LabelInput } from '@/components/labelInput';
 
 export default function Page() {
   return (
@@ -14,30 +13,36 @@ export default function Page() {
           </div>
         </div>
         <div className="space-y-4 ml-4 mr-4 mt-6 mb-6">
-          <div className="grid gap-1.5">
-            <Label htmlFor="name">Name</Label>
-            <Input placeholder="Input Here" id="name" />
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="email">Email</Label>
-            <Input placeholder="Input Here" type="email" id="email" />
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="mobile">Mobile Number</Label>
-            <Input placeholder="Input Here" id="mobile" />
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="referral">Referral Code (Optional)</Label>
-            <Input placeholder="Input Here" id="referral" />
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="password">Password</Label>
-            <Input placeholder="Input Here" type="password" id="password" />
-          </div>
-          <div className="grid gap-1.5">
-            <Label htmlFor="cpassword">Confirm Password</Label>
-            <Input placeholder="Input Here" type="password" id="cpassword" />
-          </div>
+          <LabelInput label="Name" htmlFor="name" inputId="name" />
+          <LabelInput
+            label="Email"
+            htmlFor="email"
+            inputId="email"
+            type="email"
+          />
+          <LabelInput
+            label="Mobile Number"
+            htmlFor="mobile"
+            inputId="mobile"
+            type="number"
+          />
+          <LabelInput
+            label="Referral Code (Optional)"
+            htmlFor="refferal"
+            inputId="refferal"
+          />
+          <LabelInput
+            label="Password"
+            htmlFor="password"
+            inputId="password"
+            type="password"
+          />
+          <LabelInput
+            label="Confirm Password"
+            htmlFor="cpassword"
+            inputId="cpassword"
+            type="password"
+          />
         </div>
         <div className="ml-4 mr-4 mb-4 grid gap-3">
           <Button variant="default" className="text-white">
