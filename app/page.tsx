@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -18,6 +18,9 @@ export default function Home() {
       </div>
       <div>
         <Link href="/game-list">Game List</Link>
+      </div>
+      <div>
+        <Link href="/query">Use Query</Link>
       </div>
     </div>
   );

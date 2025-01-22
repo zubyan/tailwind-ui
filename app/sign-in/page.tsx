@@ -11,7 +11,7 @@ export default function Page() {
       <form>
         <div className="ml-4 mr-4 mt-10">
           <div className="mb-10 flex justify-center">
-            <Image alt="logo" src={logo} width={118.98} height={132.07} />
+          <Image alt="logo" src={logo} width={118.98} height={132.07} />
           </div>
           <div className="space-y-5">
             <div>
