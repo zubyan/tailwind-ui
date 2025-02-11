@@ -2,50 +2,28 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LabelInput } from "@/components/labelInput";
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import type { FieldValues } from "react-hook-form";
 
 export default function Page() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    getValues,
+  } = useForm();
 
-  const [errors, setErrors] = useState<string[]>([]);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    if (password !== confirmPassword) {
-      setErrors(["Password and confirm password does not match"]);
-      setIsSubmitting(false);
-      return;
-    }
-
+  const onSubmit = async (data: FieldValues) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setName("");
-    setEmail("");
-    setMobile("");
-    setPassword("");
-    setConfirmPassword("");
-    setIsSubmitting(false);
+    reset();
+    console.log(data);
   };
 
   return (
     <div className="max-w-[412px]">
-      <form onSubmit={handleSubmit}>
-        {errors.length > 0 && (
-          <ul>
-            {errors.map((error) => (
-              <li key={error} className="bg-red-100 text-red-500 py-2 rounded">
-                {error}
-              </li>
-            ))}
-          </ul>
-        )}
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <div className="font-bold text-center text-[32px] mt-10">Sign Up</div>
           <div className="text-gray-400 mt-4 text-center">
@@ -57,28 +35,31 @@ export default function Page() {
             label="Name"
             htmlFor="name"
             inputId="name"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            {...register("name", { required: "Name is required" })}
           />
+          {errors.name && (
+            <p className="text-red-500">{`${errors.name.message}`}</p>
+          )}
           <LabelInput
             label="Email"
             htmlFor="email"
             inputId="email"
             type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...register("email", { required: "Email is required" })}
           />
+          {errors.email && (
+            <p className="text-red-500">{`${errors.email.message}`}</p>
+          )}
           <LabelInput
             label="Mobile Number"
             htmlFor="mobile"
             inputId="mobile"
             type="number"
-            required
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
+            {...register("mobile", { required: "Mobile number is required" })}
           />
+          {errors.mobile && (
+            <p className="text-red-500">{`${errors.mobile.message}`}</p>
+          )}
           <LabelInput
             label="Referral Code (Optional)"
             htmlFor="refferal"
@@ -89,19 +70,31 @@ export default function Page() {
             htmlFor="password"
             inputId="password"
             type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            {...register("password", {
+              required: "Password is required",
+              minLength: {
+                value: 5,
+                message: "Password must be at least 5 characters long",
+              },
+            })}
           />
+          {errors.password && (
+            <p className="text-red-500">{`${errors.password.message}`}</p>
+          )}
           <LabelInput
             label="Confirm Password"
             htmlFor="cpassword"
             inputId="cpassword"
             type="password"
-            required
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            {...register("confirmPassword", {
+              required: "Confirm password is required",
+              validate: (value) =>
+                value === getValues("password") || "Passwords must match",
+            })}
           />
+          {errors.confirmPassword && (
+            <p className="text-red-500">{`${errors.confirmPassword.message}`}</p>
+          )}
         </div>
         <div className="ml-4 mr-4 mb-4 grid gap-3 disabled:bg-gray-500">
           <Button
